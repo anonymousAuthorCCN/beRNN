@@ -57,7 +57,7 @@ def schematic_plot(model_dir, monthsConsidered, rule, mode):
 
     model = Model(model_dir, dt=1)
     hp = model.hp
-    trial_dir = 'W://group_csp//analyses//XXX//Data//BeRNN_' + model_dir.split('BeRNN_')[-1].split('_')[0] + '//PreprocessedData_wResp_ALL'
+    trial_dir = 'W://XXX//analyses//XXX//Data//XXX' + model_dir.split('XXX')[-1].split('_')[0] + '//PreprocessedData_wResp_ALL'
 
     with tf.Session() as sess:
         model.restore()
@@ -235,7 +235,7 @@ def schematic_plot(model_dir, monthsConsidered, rule, mode):
 ########################################################################################################################
 if __name__ == '__main__':
     # Pre-allocate variables
-    model_dir = 'W:\\group_csp\\analyses\\XXX' + '\BeRNN_models\Model_112_BeRNN_01_Month_2-4'
+    model_dir = 'W:\\XXX\\analyses\\XXX' + '\XXX\XXX-4'
     monthsConsidered = ['2','3','4']
     rule = 'DM'
     mode = 'Evaluation'
