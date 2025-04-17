@@ -44,7 +44,7 @@ def create_repeated_param_combinations(param_grid, sample_size):
     return repeated_combinations
 
 
-# # attention: hitkip cluster ############################################################################################
+# # attention: XXX cluster ############################################################################################
 # # If script executed on hitkip cluster, HPs have to be defined in sbatch_HPscript.sbatch
 # parser = argparse.ArgumentParser(description="Train RNN with specific parameters.")
 # parser.add_argument("--adjParams", type=str, required=True, help="JSON-encoded parameters")
@@ -56,7 +56,7 @@ def create_repeated_param_combinations(param_grid, sample_size):
 #     raise ValueError(f"Failed to decode adjParams JSON: {e}")
 #
 # print("Loaded Parameters:", adjParams)
-# # attention: hitkip cluster ############################################################################################
+# # attention: XXX cluster ############################################################################################
 
 
 # attention: all other setups ##########################################################################################
@@ -112,7 +112,7 @@ adjParams = {
     'rule_prob_map': [{"DM": 1,"DM_Anti": 1,"EF": 1,"EF_Anti": 1,"RP": 1,"RP_Anti": 1,"RP_Ctx1": 1,"RP_Ctx2": 1,"WM": 1,"WM_Anti": 1,"WM_Ctx1": 1,"WM_Ctx2": 1}], # fraction of tasks represented in training data
     'participant': ['beRNN_03'], # Participant to take
     'data': data,
-    'machine': ['local'], # 'local' 'pandora' 'hitkip'
+    'machine': ['local'], # 'local' 'XXX' 'XXX'
     'tasksString': ['AllTask'], # tasksTaken
     'sequenceMode': [True], # Decide if models are trained sequentially month-wise
     'trainingBatch': ['01'],
@@ -148,10 +148,10 @@ for modelNumber, params in enumerate(sampled_combinations): # info: either sampl
     # Define main path
     if params['machine'] == 'local':
         path = 'C:\\Users\\XXX\\Desktop\\PyProjects'
-    elif params['machine'] == 'hitkip':
+    elif params['machine'] == 'XXX':
         path = '/zi/home/XXX/Desktop'
-    elif params['machine'] == 'pandora':
-        path = '/pandora/home/XXX/01_Projects/RNN/multitask_BeRNN-main'
+    elif params['machine'] == 'XXX':
+        path = '/XXX/home/XXX/01_Projects/RNN/XXX-main'
 
     # Define data path
     preprocessedData_path = os.path.join(path, 'Data', params['participant'], params['data'])
@@ -163,11 +163,11 @@ for modelNumber, params in enumerate(sampled_combinations): # info: either sampl
         # Define model_dir for different servers
         if params['machine'] == 'local':
             model_dir = os.path.join(
-                f"{path}\\beRNNmodels\\{params['trainingYear_Month']}\\{params['trainingBatch']}\\{params['participant']}_{params['tasksString']}_{params['monthsString']}_{params['data']}_iteration{modelNumber}_{params['rnn_type']}_{params['n_rnn']}_{params['activation']}",
+                f"{path}\\XXX\\{params['trainingYear_Month']}\\{params['trainingBatch']}\\{params['participant']}_{params['tasksString']}_{params['monthsString']}_{params['data']}_iteration{modelNumber}_{params['rnn_type']}_{params['n_rnn']}_{params['activation']}",
                 model_name)
         elif params['machine'] == 'hitkip' or params['machine'] == 'pandora':
             model_dir = os.path.join(
-                f"{path}/beRNNmodels/{params['trainingYear_Month']}/{params['trainingBatch']}/{params['participant']}_{params['tasksString']}_{params['monthsString']}_{params['data']}_iteration{modelNumber}_{params['rnn_type']}_{params['n_rnn']}_{params['activation']}",
+                f"{path}/XXX/{params['trainingYear_Month']}/{params['trainingBatch']}/{params['participant']}_{params['tasksString']}_{params['monthsString']}_{params['data']}_iteration{modelNumber}_{params['rnn_type']}_{params['n_rnn']}_{params['activation']}",
                 model_name)
 
         print('MODELDIR: ', model_dir)
