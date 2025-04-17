@@ -1465,8 +1465,8 @@ for participant in participants:
     # attention: change to right path
     path = 'C:\\Users\\XXX\\Desktop\\PyProjects' # local
     # path = 'W:\\XXX\\analyses\\XXX' # Fl storage
-    # path = '/data' # hitkip cluster
-    # path = '/pandora/home/XXX/01_Projects/RNN/XXX-main' # pandora server
+    # path = '/data' # XXX cluster
+    # path = '/XXX/home/XXX/01_Projects/RNN/XXX-main' # XXX server
 
     # Create current main_path
     main_path = os.path.join(path, dataFolder, participant, preprocessing_folder)
