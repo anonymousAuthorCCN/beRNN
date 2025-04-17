@@ -41,7 +41,7 @@ def get_default_hp(ruleset):
     num_ring = tools.get_num_ring(ruleset)
     n_rule = tools.get_num_rule(ruleset)
 
-    machine = 'local' # 'local' 'pandora' 'hitkip'
+    machine = 'local' # 'local' 'XXX' 'XXX'
     data = 'data_lowDim_correctOnly' # 'data_highDim' , data_highDim_correctOnly , data_highDim_lowCognition , data_lowDim , data_lowDim_correctOnly , data_lowDim_lowCognition, 'data_highDim_correctOnly_3stimTC'
     trainingBatch = 'test'
     trainingYear_Month = '2025_04_lowDimTests'
@@ -104,7 +104,7 @@ def get_default_hp(ruleset):
         'rule_prob_map': {"DM": 1,"DM_Anti": 1,"EF": 1,"EF_Anti": 1,"RP": 1,"RP_Anti": 1,"RP_Ctx1": 1,"RP_Ctx2": 1,"WM": 1,"WM_Anti": 1,"WM_Ctx1": 1,"WM_Ctx2": 1}, # fraction of tasks represented in training data
         'tasksString': 'Alltask', # tasks taken
         'sequenceMode': True, # Decide if models are trained sequentially month-wise
-        'participant': 'beRNN_01', # Participant to take
+        'participant': 'XXX', # Participant to take
         'data': data, # 'data_highDim' , data_highDim_correctOnly , data_highDim_lowCognition , data_lowDim , data_lowDim_correctOnly , data_lowDim_lowCognition, data_timeCompressed, data_lowDim_timeCompressed
         'machine': machine,
         'trainingBatch': trainingBatch,
@@ -300,8 +300,8 @@ def train(model_dir,train_data ,eval_data,hp=None,max_steps=3e6,display_step=500
     # # info: Create structural mask to multiply with hidden layer
     # if hp['s_mask'] == 'sc1000':
     #     import scipy.io
-    #     sc = scipy.io.loadmat('C:\\Users\\XXX\\Desktop\\PyProjects\\art_beRNN\\masks\\sc1000')
-    #     # sc = scipy.io.loadmat('C:\\Users\\XXX\\Desktop\\PyProjects\\art_beRNN\\masks\\sc100')
+    #     sc = scipy.io.loadmat('C:\\Users\\XXX\\Desktop\\PyProjects\\XXX\\masks\\sc1000')
+    #     # sc = scipy.io.loadmat('C:\\Users\\XXX\\Desktop\\PyProjects\\XXX\\masks\\sc100')
     #     sc_mask = sc['mat_zero'] # 1000
     #     # sc_mask = sc['shaefer_rsn'] # 100
     #
@@ -513,10 +513,10 @@ if __name__ == '__main__':
         # Define main path
         if hp['machine'] == 'local':
             path = 'C:\\Users\\XXX\\Desktop\\PyProjects'
-        elif hp['machine'] == 'hitkip':
+        elif hp['machine'] == 'XXX':
             path = '/zi/home/XXX/Desktop'
-        elif hp['machine'] == 'pandora':
-            path = '/pandora/home/XXX/01_Projects/RNN/multitask_BeRNN-main'
+        elif hp['machine'] == 'XXX':
+            path = '/pandora/home/XXX/01_Projects/RNN/XXX-main'
 
         # Define data path
         preprocessedData_path = os.path.join(path, 'Data', hp['participant'], hp['data'])  # pandora
@@ -528,7 +528,7 @@ if __name__ == '__main__':
             # Define model_dir for different servers
             if hp['machine'] == 'local':
                 model_dir = os.path.join(f"{path}\\beRNNmodels\\{hp['trainingYear_Month']}\\{hp['trainingBatch']}\\{hp['participant']}_{hp['tasksString']}_{hp['monthsString']}_{hp['data']}_iteration{modelNumber}_{hp['rnn_type']}_{hp['n_rnn']}_{hp['activation']}", model_name)
-            elif hp['machine'] == 'hitkip' or hp['machine'] == 'pandora':
+            elif hp['machine'] == 'XXX' or hp['machine'] == 'XXX':
                 model_dir = os.path.join(f"{path}/beRNNmodels/{hp['trainingYear_Month']}/{hp['trainingBatch']}/{hp['participant']}_{hp['tasksString']}_{hp['monthsString']}_{hp['data']}_iteration{modelNumber}_{hp['rnn_type']}_{hp['n_rnn']}_{hp['activation']}", model_name)
 
             if not os.path.exists(model_dir):
@@ -568,7 +568,7 @@ if __name__ == '__main__':
                 eval_data[subdir] = eval_files
 
             # info: If you want to initialize the new model with an old one
-            # load_dir = 'C:\\Users\\XXX\\Desktop\\PyProjects\\beRNNmodels\\2025_03\\sc_mask_final\\beRNN_03_All_3-5_data_highDim_correctOnly_iteration1_LeakyRNN_1000_relu\\model_month_3'
+            # load_dir = 'C:\\Users\\XXX\\Desktop\\PyProjects\\XXX\\2025_03\\sc_mask_final\\XXX-5_data_highDim_correctOnly_iteration1_LeakyRNN_1000_relu\\model_month_3'
             # Start Training ---------------------------------------------------------------------------------------------------
             train(model_dir=model_dir, train_data = train_data, eval_data = eval_data, load_dir = load_dir)
 
