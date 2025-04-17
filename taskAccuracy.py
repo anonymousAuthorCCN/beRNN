@@ -20,7 +20,7 @@ with warnings.catch_warnings():
 ########################################################################################################################
 # Participant list
 
-participant_dir = 'W:\\group_csp\\analyses\\XXX\\Data\\'
+participant_dir = 'W:\\XXX\\analyses\\XXX\\Data\\'
 participantList = os.listdir(participant_dir)
 
 participant = participantList[2] # choose which particpant to analyze
@@ -47,7 +47,7 @@ for i in list_testParticipant_month:
         # print(currentFile['UTC Date and Time'])
         if currentFile['Task Name'][0] != '000_state_questions' and currentFile['Task Name'][0] != '000_session_completion': # avoid files with state questions and session completion
             # print(currentFile.iloc[0,28].split('_trials_')[0])
-            # print('W:/AG_CSP/Projekte/art_beRNN/02_Daten/BeRNN_main/' + participant + month + i)
+            # print('W:/XXX/Projekte/XXX/02_Daten/XXX/' + participant + month + i)
             if currentFile['Spreadsheet'][0].split('_trials_')[0] == 'DM':
                 # percentCorrect_DM += currentFile['Store: PercentCorrectDM'][len(currentFile['Store: PercentCorrectDM'])-3]
                 # count_DM += 1
@@ -188,7 +188,7 @@ participant_dir = 'C:\\Users\\XXX\\Desktop\\BackUp\\Data'
 months = ['1','2','3','4','5','6','7','8','9','10','11','12'] # choose which month to analyze
 strToSave = months[0] + '-' + months[-1]
 
-newParticpantList = ['BeRNN_01'] #
+newParticpantList = ['XXX'] #
 
 # Assign a color to each task
 filename_color_dict = {
