@@ -1688,15 +1688,15 @@ def check_permissions(file_path):
 dataFolder = "Data"
 subfolders = ['DM', 'DM_Anti', 'EF', 'EF_Anti', 'RP', 'RP_Anti', 'RP_Ctx1', 'RP_Ctx2', 'WM', 'WM_Anti', 'WM_Ctx1', 'WM_Ctx2']
 preprocessing_folder = 'data_lowDim_correctOnly_timeCompressed'
-participants = ['beRNN_01', 'beRNN_02', 'beRNN_03', 'BeRNN_04', 'beRNN_05']
+participants = ['XXX']
 months = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'] # info: debugging '13'
 
 for participant in participants:
     # attention: change to right path
     path = 'C:\\Users\\XXX\\Desktop\\PyProjects'  # local
-    # path = 'W:\\group_csp\\analyses\\XXX'  # Fl storage
-    # path = '/data' # hitkip cluster
-    # path = '/pandora/home/XXX/01_Projects/RNN/multitask_BeRNN-main' # pandora server
+    # path = 'W:\\XXX\\analyses\\XXX'  # Fl storage
+    # path = '/data' # XXX cluster
+    # path = '/XXX/home/XXX/01_Projects/RNN/XXX-main' # XXX server
 
     # Create current main_path
     main_path = os.path.join(path, dataFolder, participant, preprocessing_folder)
