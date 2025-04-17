@@ -134,7 +134,7 @@ def apply_threshold(matrix, threshold):
 # each representing 40 trained trials. So I should gather 5 data points of the training data to have the same smoothness
 # in the plots, window size = 5
 ########################################################################################################################
-def plot_performanceprogress_test_BeRNN(model_dir, figurePath, figurePath_overview, model, rule_plot=None):
+def plot_performanceprogress_test_XXX(model_dir, figurePath, figurePath_overview, model, rule_plot=None):
     # Plot Evaluation Progress
     log = tools.load_log(model_dir)
     # log = tools.load_log(currentModelDirectory)
@@ -371,10 +371,10 @@ def figureSceletton():
     return fig, axs, axs_legend
 
 # Paths and settings
-participant = 'beRNN_03' # subfolder with model iterations
+participant = 'XXX' # subfolder with model iterations
 trainingNumber = '\\2025_04_2layerTest\\03'
-folder = '\\beRNNmodels'
-# folderPath = 'W:\\group_csp\\analyses\\XXX'
+folder = '\\XXX'
+# folderPath = 'W:\\XXX\\analyses\\XXX'
 folderPath = 'C:\\Users\\XXX\\Desktop\\PyProjects'
 _finalPath = folderPath + folder + trainingNumber # attention
 
@@ -430,8 +430,8 @@ for _model in _model_list:
             os.makedirs(visualsDirectory, exist_ok=True)
 
             # Generate plots
-            fig_test = plot_performanceprogress_test_BeRNN(currentModelDirectory, visualsDirectory, "", model, rule_plot=rule_plot)
-            fig_train = plot_performanceprogress_train_BeRNN(currentModelDirectory, visualsDirectory, "", model, rule_plot=rule_plot)
+            fig_test = plot_performanceprogress_test_XXX(currentModelDirectory, visualsDirectory, "", model, rule_plot=rule_plot)
+            fig_train = plot_performanceprogress_train_XXX(currentModelDirectory, visualsDirectory, "", model, rule_plot=rule_plot)
 
             analysis_test = clustering.Analysis(data_dir, currentModelDirectory, 'test', currentHP['monthsConsidered'], 'rule')
             analysis_train = clustering.Analysis(data_dir, currentModelDirectory, 'train', currentHP['monthsConsidered'], 'rule')
@@ -690,7 +690,7 @@ print(f"Distributions saved for participant {participant_id} in {distribution_di
 # from scipy.stats import ttest_ind, ks_2samp
 # import seaborn as sns
 #
-# destination_dir = 'C:\\Users\\XXX\\Desktop\\PyProjects\\beRNNmodels\\2025_03_2\\topMarkerComparisons' # fix: must be generic
+# destination_dir = 'C:\\Users\\XXX\\Desktop\\PyProjects\\XXX\\2025_03_2\\topMarkerComparisons' # fix: must be generic
 # os.makedirs(destination_dir, exist_ok=True)
 #
 # def compare_participants(dist_1, dist_2, participant_1, participant_2):
@@ -779,8 +779,8 @@ print(f"Distributions saved for participant {participant_id} in {distribution_di
 # participant1 = "beRNN_01" # info: should be name of training batch
 # participant2 = "beRNN_05" # info: should be name of training batch
 #
-# distributions_dir_participant_01 = f"C:\\Users\\XXX\\Desktop\\PyProjects\\beRNNmodels\\2025_03_2\\{participant1}\\overviews\\distributions"
-# distributions_dir_participant_02 = f"C:\\Users\\XXX\\Desktop\\PyProjects\\beRNNmodels\\2025_03_2\\{participant2}\\overviews\\distributions"
+# distributions_dir_participant_01 = f"C:\\Users\\XXX\\Desktop\\PyProjects\\XXX\\2025_03_2\\{participant1}\\overviews\\distributions"
+# distributions_dir_participant_02 = f"C:\\Users\\XXX\\Desktop\\PyProjects\\XXX\\2025_03_2\\{participant2}\\overviews\\distributions"
 #
 # dist_1 = load_distributions(distributions_dir_participant_01)
 # dist_2 = load_distributions(distributions_dir_participant_02)
@@ -855,10 +855,10 @@ print(f"Distributions saved for participant {participant_id} in {distribution_di
 #
 #         # ax_matrix.set_title(title, fontsize=14, pad=20)
 #         # Save the figure with a tight bounding box to ensure alignment
-#         # save_path = os.path.join('W:\\group_csp\\analyses\\XXX', 'BeRNNmodels\\Visuals\\Similarity\\finalReport',
+#         # save_path = os.path.join('W:\\group_csp\\analyses\\XXX', 'XXX\\Visuals\\Similarity\\finalReport',
 #         #                          model_dir.split("\\")[-1] + '_' + 'Similarity' + '.png')
 #         # save_path = os.path.join(
-#         #     'W:\\group_csp\\analyses\\XXX\\beRNNmodels\\Visuals\\CorrelationStructure\\BarnaModels',
+#         #     'W:\\group_csp\\analyses\\XXX\\XXX\\Visuals\\CorrelationStructure\\XXX',
 #         #     model_dir.split("\\")[-1] + '_' + 'CorrelationStructure' + '.png')
 #         plt.savefig(os.path.join(figurePath, model_dir.split("\\")[-1] + '_' + 'structuralCorrelation' + f'_{mode}' + '.png'),
 #                     format='png', dpi=300, bbox_inches='tight') # info: change here
