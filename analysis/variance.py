@@ -52,7 +52,7 @@ def _compute_variance_bymodel(data_dir, model: object, sess: object, mode: str, 
         from scipy.stats import ortho_group
         random_ortho_matrix = ortho_group.rvs(dim=n_hidden)
 
-    # data_dir = 'C:\\Users\\XXX\\Desktop\\BackUp\\Data\\BeRNN_' + model_dir.split('BeRNN_')[-1].split('_')[0] + '\\PreprocessedData_wResp_ALL'
+    # data_dir = 'C:\\Users\\XXX\\Desktop\\BackUp\\Data\\XXX' + model_dir.split('XXX')[-1].split('_')[0] + '\\PreprocessedData_wResp_ALL'
 
     # III: Split the data ##############################################################################################
     # List of the subdirectories
