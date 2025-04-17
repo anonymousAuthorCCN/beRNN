@@ -37,7 +37,7 @@ def easy_activity_plot(model_dir, rule, monthsConsidered, mode):
     with tf.Session() as sess:
         model.restore()
 
-        trial_dir = 'W://group_csp//analyses//XXX//Data//BeRNN_' + model_dir.split('BeRNN_')[-1].split('_')[0] + '//PreprocessedData_wResp_ALL'
+        trial_dir = 'W://XXX//analyses//XXX//Data//XXX' + model_dir.split('XXX')[-1].split('_')[0] + '//PreprocessedData_wResp_ALL'
 
         x, y, y_loc, file_stem = tools.load_trials(trial_dir, monthsConsidered, rule, mode)
 
@@ -103,7 +103,7 @@ def pretty_inputoutput_plot(model_dir, rule, monthsConsidered, save=False, plot_
 
     model = Model(model_dir)
     hp = model.hp
-    trial_dir = 'W://group_csp//analyses//XXX//Data//BeRNN_' + model_dir.split('BeRNN_')[-1].split('_')[0] + '//PreprocessedData_wResp_ALL'
+    trial_dir = 'W://XXX//analyses//XXX//Data//XXX' + model_dir.split('XXX')[-1].split('_')[0] + '//PreprocessedData_wResp_ALL'
 
     with tf.Session() as sess:
         model.restore()
@@ -237,7 +237,7 @@ def pretty_inputoutput_plot(model_dir, rule, monthsConsidered, save=False, plot_
 ########################################################################################################################
 if __name__ == '__main__':
     # Pre-allocate necessary variables
-    model_dir = 'W:\\group_csp\\analyses\\XXX' + '\BeRNN_models\Model_112_BeRNN_01_Month_2-4'
+    model_dir = 'W:\\XXX\\analyses\\XXX' + '\XXX\Model_112_BeRNN_01_Month_2-4'
     rule = 'DM'
     monthsConsidered = ['2', '3', '4']
     mode = 'Evaluation'
